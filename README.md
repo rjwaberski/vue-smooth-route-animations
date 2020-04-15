@@ -1,24 +1,13 @@
-# smooth-route-animations
+# Smooth animations with Vue Router
 
-## Project setup
+In the project you'll find two approaches of handling different animations and transitions in Vue app
+
+1. Use [Navigation Guard](https://router.vuejs.org/guide/advanced/navigation-guards.html) - example in `router/index.ts`
+2. Use [Watcher](https://vuejs.org/v2/guide/computed.html#Watchers) - example in `AppNav.vue`
+
+## Run project
+
 ```
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
 yarn serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
