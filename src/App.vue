@@ -1,32 +1,31 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-nav />
+    <transition :name="pageTransition" mode="out-in">
+      <router-view class="container" />
+    </transition>
   </div>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
+import { TransitionName } from './utils/enums';
+
+import AppNav from '@/components/AppNav.vue';
+
+const pages = namespace('pages');
+
+@Component({
+  components: {
+    AppNav,
+  },
+})
+export default class App extends Vue {
+  @pages.State private pageTransition!: TransitionName;
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import '@/assets/scss/main.scss';
 </style>

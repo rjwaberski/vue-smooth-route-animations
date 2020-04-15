@@ -1,0 +1,30 @@
+// fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $transitionTime;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// slide-right & slide-left
+.slide-right-enter-active,
+.slide-left-enter-active {
+  transition: all $transitionTime ease;
+}
+.slide-right-leave-active,
+.slide-left-leave-active {
+  transition: all $transitionTime cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-right-enter,
+.slide-right-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-left-enter,
+.slide-left-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
